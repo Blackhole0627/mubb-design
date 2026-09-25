@@ -5,34 +5,55 @@
 @font-face{font-family:'Montserrat';src:url('fonts/Montserrat-Regular.ttf');font-weight:300 400;font-display:swap}
 @font-face{font-family:'Montserrat';src:url('fonts/Montserrat-Medium.ttf');font-weight:500;font-display:swap}
 @font-face{font-family:'Montserrat';src:url('fonts/Montserrat-SemiBold.ttf');font-weight:600 700;font-display:swap}
-:root{--brown:#241a13;--brown2:#3a2c20;--gold:#cba876;}
+:root{--brown:#241a13;--brown2:#3a2c20;--gold:#cba876;--ease:cubic-bezier(.22,.61,.36,1);}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Montserrat',system-ui,sans-serif;background:#000;color:#fff;font-weight:300}
 img{display:block;max-width:100%}
 .wrap{max-width:1440px;margin:0 auto}
 
-header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;transition:background .3s,padding .3s;background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent)}
-header.solid{background:#000;padding:16px 48px;border-bottom:1px solid #1c1c1c}
+/* header: transparent over the hero, inverts to solid white with black text on scroll */
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;transition:background .4s var(--ease),padding .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease);background:transparent;color:#fff}
+header.stuck{background:#fff;color:#111;padding:16px 48px;box-shadow:0 1px 18px rgba(0,0,0,.08)}
 .logo{font-size:16px;letter-spacing:.08em}
 .logo b{font-weight:600}
 .logo span{font-size:9px;letter-spacing:.3em;display:block;color:#bbb;margin-top:2px}
+header.stuck .logo span{color:#888}
 nav{display:flex;gap:34px}
-nav a{color:#fff;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+nav a{color:inherit;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
 nav a.on{font-weight:600;opacity:1}
 nav a:hover{opacity:1}
 
-.hero{position:relative;height:100vh;min-height:560px;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.75) 10%, rgba(0,0,0,.15) 45%, rgba(0,0,0,.35) 100%)}
-.hero .content{position:absolute;left:48px;bottom:80px;z-index:2;max-width:640px}
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.8) 5%, rgba(0,0,0,.15) 45%, rgba(0,0,0,.4) 100%)}
+.hero-in{position:relative;z-index:2;padding:0 48px 44px;max-width:680px}
 .hero h1{font-weight:300;font-size:clamp(2.4rem,6vw,4.6rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;margin-bottom:18px}
-.hero p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#ddd}
+.hero .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.hero p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#ddd;margin-bottom:26px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;border:1px solid #fff;color:#fff;text-decoration:none;padding:14px 30px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:background .3s,color .3s}
+.btn:hover{background:#fff;color:#111}
+.btn.solid{background:#fff;color:#111}
+.btn.solid:hover{background:var(--gold);border-color:var(--gold)}
+
+/* quick-links: frosted glass cards pinned to the bottom edge of the hero — the "white" touch inside the dark hero */
+.qlinks{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14)}
+.ql{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:22px 24px;text-decoration:none;color:#fff;transition:background .3s}
+.ql:hover{background:rgba(255,255,255,.18)}
+.ql .t{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.ql .d{display:block;font-size:11px;color:rgba(255,255,255,.7);margin-top:6px}
+
+/* stats band — deliberately white, black text: the contrast section against the black/brown rest of the page */
+.stats{background:#fff;color:#111;padding:64px 48px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1344px;margin:0 auto;text-align:center}
+.stats .n{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:300;letter-spacing:.02em}
+.stats .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#777;margin-top:8px}
 
 .band{padding:110px 48px;background:linear-gradient(180deg,#000,var(--brown) 40%,var(--brown2))}
 .band.image{background:none;position:relative;padding:0;height:520px}
 .band.image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 .band.image .in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 48px;max-width:560px}
-.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.eyebrow2{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 h2{font-weight:300;font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.15;margin-bottom:14px}
 .link{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:22px;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px}
 .link:hover{border-color:#fff}
@@ -59,8 +80,6 @@ h2{font-weight:300;font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:.02em;tex
 
 .cta{background:#000;text-align:center;padding:110px 24px}
 .cta h2{max-width:760px;margin:0 auto 26px}
-.btn{display:inline-block;border:1px solid #fff;color:#fff;text-decoration:none;padding:14px 34px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.btn:hover{background:#fff;color:#000}
 
 footer{background:#000;border-top:1px solid #1a1a1a;padding:34px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:11px;color:#999}
 footer b{color:#fff;display:block;margin-bottom:8px;letter-spacing:.08em}
@@ -68,10 +87,11 @@ footer .col{min-width:180px}
 
 @media (max-width:820px){
   nav{display:none}
-  .grid3,.tgrid{grid-template-columns:1fr}
+  .grid3,.tgrid,.stats-grid{grid-template-columns:1fr 1fr}
+  .qlinks{grid-template-columns:1fr 1fr}
   header{padding:20px 24px}
   .band{padding:70px 24px}
-  .hero .content{left:24px;bottom:56px}
+  .hero-in{padding:0 24px 30px}
 }
 </style></head><body>
 
@@ -83,17 +103,44 @@ footer .col{min-width:180px}
 </header>
 
 <section class="hero">
-  <img src="img/hero.jpg" alt="MUBB Design Studio">
-  <div class="content">
+  <img class="bg" src="img/hero.jpg" alt="MUBB Design Studio">
+  <!-- Hero video: not enabled. The project videos supplied are a narrated
+       talking-head tour (captions, a presenter) or vertical/portrait reels —
+       neither works muted on loop as ambient background. Ask the client for
+       a clean ambient interior clip (no presenter, no baked captions),
+       then swap this <img> for a <video> using the same progressive-
+       enhancement pattern (poster first, video fades in, skipped on
+       prefers-reduced-motion / slow connections). -->
+  <div class="hero-in">
+    <span class="eyebrow">Interiorismo · Arquitectura · Mobiliario a medida</span>
     <h1>Diseñamos<br>experiencias</h1>
     <p>Creamos espacios que reflejan quien eres.</p>
+    <div class="row">
+      <a class="btn solid" href="#">Ver proyectos</a>
+      <a class="btn" href="#">Solicitar cita</a>
+    </div>
+  </div>
+  <nav class="qlinks">
+    <a class="ql" href="#"><span class="t">Portafolio</span><span class="d">Proyectos recientes</span></a>
+    <a class="ql" href="#"><span class="t">Servicios</span><span class="d">Residencial · Hotelero · Comercial</span></a>
+    <a class="ql" href="#"><span class="t">Studio</span><span class="d">Nuestra filosofía</span></a>
+    <a class="ql" href="#"><span class="t">Contacto</span><span class="d">Solicitar una cita</span></a>
+  </nav>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat"><div class="n">20+</div><div class="l">Años de trayectoria</div></div>
+    <div class="stat"><div class="n">2.000+</div><div class="l">Acabados exclusivos</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Showrooms en Ecuador</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Ciudades — incl. Miami</div></div>
   </div>
 </section>
 
 <section class="band image">
   <img src="img/pared.jpg" alt="">
   <div class="in">
-    <div class="eyebrow">Diseño interior a medida</div>
+    <div class="eyebrow2">Diseño interior a medida</div>
     <h2>Espacios que inspiran</h2>
     <a class="link" href="#">Conoce más →</a>
   </div>
@@ -133,7 +180,7 @@ footer .col{min-width:180px}
 
 <section class="cta">
   <h2>¿Listo para transformar tu espacio en una experiencia única?</h2>
-  <a class="btn" href="#">Solicitar cita</a>
+  <a class="btn" href="#" style="border-color:#fff">Solicitar cita</a>
 </section>
 
 <footer>
@@ -144,6 +191,6 @@ footer .col{min-width:180px}
 
 <script>
   const hdr = document.getElementById('hdr');
-  addEventListener('scroll', () => hdr.classList.toggle('solid', scrollY > 80));
+  addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
 </script>
 </body></html>
