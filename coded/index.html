@@ -81,9 +81,65 @@ h2{font-weight:300;font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:.02em;tex
 .cta{background:#000;text-align:center;padding:110px 24px}
 .cta h2{max-width:760px;margin:0 auto 26px}
 
-footer{background:#000;border-top:1px solid #1a1a1a;padding:34px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:11px;color:#999}
-footer b{color:#fff;display:block;margin-bottom:8px;letter-spacing:.08em}
-footer .col{min-width:180px}
+/* press / testimonial carousel — cloned from the real-estate project's Testimonials.tsx pattern */
+.testi{background:#0c0906;padding:110px 24px;text-align:center}
+.testi .head{margin-bottom:50px}
+.testi .head span{display:block;margin-bottom:14px}
+.t-stage{position:relative;min-height:340px;max-width:1200px;margin:0 auto}
+.t-card{position:absolute;left:50%;top:0;width:min(640px,88%);transform:translateX(-50%);background:var(--brown2);padding:44px 40px;transition:opacity .5s var(--ease),transform .5s var(--ease);z-index:0;opacity:0}
+.t-card.center{opacity:1;z-index:2;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.t-card.left{opacity:.5;transform:translateX(calc(-50% - 72%)) scale(.94);z-index:1}
+.t-card.right{opacity:.5;transform:translateX(calc(-50% + 72%)) scale(.94);z-index:1}
+.t-av{width:64px;height:64px;border-radius:50%;background:var(--gold);color:#111;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:13px;font-weight:600;letter-spacing:.05em}
+.t-name{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.t-tag{font-size:10.5px;color:#999;letter-spacing:.08em;text-transform:uppercase;margin:5px 0 20px}
+.t-quote{font-style:italic;font-weight:300;font-size:15px;line-height:1.75;color:#eee}
+.t-arrows{display:flex;justify-content:center;gap:16px;margin-top:34px}
+.t-arrows button{width:42px;height:42px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;font-size:14px;transition:background .25s,border-color .25s}
+.t-arrows button:hover{background:#fff;color:#111;border-color:#fff}
+
+/* join band — cloned from JoinNetwork.tsx, black leather texture background */
+.join{position:relative;background:#0a0a0a url('img/join-bg.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:clamp(72px,10vh,110px) 24px}
+.join h3{font-weight:300;letter-spacing:.28em;text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,1.9rem)}
+.join .sub2{color:#c8c8c8;font-size:13.5px;margin:16px auto 0;max-width:56ch}
+.jform{max-width:600px;margin:44px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;text-align:left}
+.jform .full{grid-column:1/-1}
+.jform input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.38);color:#fff;font-family:inherit;font-size:13px;padding:8px 0}
+.jform input::placeholder{color:rgba(255,255,255,.6);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.jform input:focus{outline:none;border-color:#fff}
+.jform .hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.human{margin:6px auto 0;border:1px solid rgba(255,255,255,.45);padding:16px 22px 14px;display:table}
+.human p{font-size:12.5px;margin:0 0 10px}
+.hicons{display:flex;gap:26px;justify-content:center}
+.hic{background:none;border:1px solid transparent;color:#fff;cursor:pointer;padding:8px;opacity:.85;display:inline-flex;align-items:center;justify-content:center}
+.hic:hover{opacity:1}
+.hic.sel{border-color:var(--gold);opacity:1;color:var(--gold)}
+.hic.err{border-color:#e25858}
+.join .sbt{margin-top:30px;border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:14px 34px}
+.join .sbt:hover{background:#fff;color:#111}
+.jnote{margin-top:14px;font-size:10.5px;color:rgba(255,255,255,.55);max-width:44ch;margin-left:auto;margin-right:auto}
+
+/* rich footer — cloned from Footer.tsx */
+footer.site{position:relative;background:#100c08;color:#fff;padding:clamp(64px,9vh,96px) 48px 120px;text-align:left}
+.f-in{display:grid;grid-template-columns:1.2fr 1fr auto;gap:40px;max-width:1344px;margin:0 auto}
+.f-logo{font-size:20px;letter-spacing:.08em;margin-bottom:22px}
+.f-logo b{font-weight:600}
+.f-copy{color:rgba(255,255,255,.55);font-size:11.5px;letter-spacing:.04em;line-height:1.9;text-transform:uppercase;max-width:38ch}
+.f-list{display:grid;gap:14px;align-content:start}
+.f-li{display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,.85);font-size:12.5px;line-height:1.5}
+.f-li span.ic{flex:none;opacity:.7}
+.f-soc{display:flex;gap:18px;align-self:start;justify-content:flex-end}
+.f-soc a{opacity:.7;color:#fff;text-decoration:none;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.3);padding:8px 12px}
+.f-soc a:hover{opacity:1;border-color:#fff}
+.f-tag{grid-column:1/-1;color:rgba(255,255,255,.5);font-size:12px;margin-top:10px;max-width:none}
+.f-rule{grid-column:1/-1;border:0;border-top:1px solid rgba(255,255,255,.13);margin:34px 0}
+.f-nav{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px 30px}
+.f-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;letter-spacing:.04em}
+.f-nav a:hover{color:var(--gold)}
+.f-bottom{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:34px;font-size:11px;color:rgba(255,255,255,.42)}
+.f-top{position:absolute;right:18px;bottom:40px;width:52px;height:52px;background:#000;border:1px solid rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px}
+.f-top:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+@media (max-width:900px){.f-in{grid-template-columns:1fr}.f-soc{justify-content:flex-start}}
 
 @media (max-width:820px){
   nav{display:none}
@@ -183,14 +239,138 @@ footer .col{min-width:180px}
   <a class="btn" href="#" style="border-color:#fff">Solicitar cita</a>
 </section>
 
-<footer>
-  <div class="col"><b>Forma parte de la filosofía MUBB</b>Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31<br>Miami — Por invitación privada</div>
-  <div class="col"><b>Enlaces</b>Términos y condiciones<br>Política de privacidad<br>Trabaja con nosotros</div>
-  <div class="col"><b>Contáctanos</b>ventas@mubb.store<br>+593 93 939 4576<br>Instagram · Facebook · TikTok · YouTube</div>
+<section class="testi" id="prensa">
+  <div class="head">
+    <span class="eyebrow2">Lo que dicen de MUBB</span>
+    <h2 style="margin:0">Reconocimiento en prensa</h2>
+  </div>
+  <div class="t-stage" id="tStage">
+    <article class="t-card" data-i="0">
+      <div class="t-av">FE</div>
+      <div class="t-name">Forbes Ecuador</div>
+      <div class="t-tag">2023 · Brandvoice</div>
+      <p class="t-quote">"Una mirada al diseño contemporáneo donde la materia, el detalle y la arquitectura se encuentran. El proyecto propone una estética serena y sofisticada."</p>
+    </article>
+    <article class="t-card" data-i="1">
+      <div class="t-av">C!</div>
+      <div class="t-name">Clave!</div>
+      <div class="t-tag">2024 · Especial interiorismo</div>
+      <p class="t-quote">"Una interpretación del diseño como lenguaje visual, donde cada elemento se integra bajo una composición precisa que equilibra elegancia, carácter y funcionalidad."</p>
+    </article>
+    <article class="t-card" data-i="2">
+      <div class="t-av">CP</div>
+      <div class="t-name">Casas Project</div>
+      <div class="t-tag">2026</div>
+      <p class="t-quote">"El proyecto se define por una estética serena que pone en valor la luz, la armonía de las proporciones y la autenticidad de los materiales, construyendo una identidad perdurable."</p>
+    </article>
+  </div>
+  <div class="t-arrows">
+    <button id="tPrev" aria-label="Anterior">←</button>
+    <button id="tNext" aria-label="Siguiente">→</button>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap" style="max-width:640px;margin:0 auto">
+    <h3>Mantente al tanto de MUBB Design</h3>
+    <p class="sub2">Nuevos proyectos, acabados y aperturas de showroom, directo a tu correo. Sin spam.</p>
+    <form class="jform" id="joinForm" novalidate>
+      <input type="text" placeholder="Nombre" aria-label="Nombre" required>
+      <input type="text" placeholder="Apellido" aria-label="Apellido">
+      <input type="email" class="full" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
+      <input type="text" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="full" style="text-align:center">
+        <div class="human" id="human">
+          <p>Confirma que eres humano seleccionando el <b>espacio</b>.</p>
+          <div class="hicons">
+            <button type="button" class="hic" data-k="obj1" aria-label="Objeto decorativo"><svg viewBox="0 0 24 24" fill="none" width="19" height="19"><path d="M12 3l1.8 5.6L19 10l-5.2 1.4L12 17l-1.8-5.6L5 10l5.2-1.4L12 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="hic" data-k="espacio" aria-label="Espacio"><svg viewBox="0 0 24 24" fill="none" width="19" height="19"><path d="M4 11l8-7 8 7M6 9.5V20h12V9.5M10 20v-6h4v6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="hic" data-k="obj2" aria-label="Llave del showroom"><svg viewBox="0 0 24 24" fill="none" width="19" height="19"><circle cx="8" cy="8" r="4.2" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l8.5 8.5M16 16l2.5-2.5M18.5 18.5l2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="full" style="text-align:center">
+        <button class="sbt" type="submit">Enviar</button>
+        <p class="jnote">Al enviar aceptas recibir comunicaciones de MUBB Design. Puedes darte de baja cuando quieras.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site" id="footer">
+  <div class="f-in">
+    <div>
+      <div class="f-logo">MUBB <b>DESIGN</b></div>
+      <p class="f-copy">© 2026 MUBB Design Studio · Todos los derechos reservados.</p>
+    </div>
+    <div class="f-list">
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Quito — Av. Orellana y González Suárez</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Miami — Por invitación privada</span></div>
+      <div class="f-li"><span class="ic">☎</span><span>+593 93 939 4576</span></div>
+      <div class="f-li"><span class="ic">✉</span><span>ventas@mubb.store</span></div>
+    </div>
+    <div class="f-soc">
+      <a href="#">Instagram</a><a href="#">Facebook</a>
+    </div>
+    <p class="f-tag">MUBB Design Studio — diseño de interiores, arquitectura y mobiliario a medida. Ecuador · Estados Unidos.</p>
+    <hr class="f-rule">
+    <nav class="f-nav">
+      <a href="#">Home</a><a href="#">Studio</a><a href="#">Servicios</a><a href="#">Portafolio</a><a href="#">Prensa</a><a href="#">Blog</a><a href="#">Contacto</a><a href="#">Trabaja con nosotros</a><a href="#">Política de privacidad</a>
+    </nav>
+    <div class="f-bottom">
+      <span>Quito · Manta · Guayaquil · Miami</span>
+      <span>Diseñado y desarrollado a medida para MUBB</span>
+    </div>
+  </div>
+  <a class="f-top" href="#hdr" aria-label="Subir">↑</a>
 </footer>
 
 <script>
   const hdr = document.getElementById('hdr');
   addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
+
+  // Press-quote carousel (cloned pattern from Testimonials.tsx)
+  (function(){
+    const cards = [...document.querySelectorAll('#tStage .t-card')];
+    const n = cards.length;
+    let i = 0;
+    function render(){
+      cards.forEach((c, k) => {
+        const off = ((k - i) % n + n) % n;
+        c.className = 't-card ' + (off === 0 ? 'center' : off === 1 ? 'right' : off === n - 1 ? 'left' : 'off');
+      });
+    }
+    document.getElementById('tPrev').onclick = () => { i = (i - 1 + n) % n; render(); };
+    document.getElementById('tNext').onclick = () => { i = (i + 1) % n; render(); };
+    render();
+  })();
+
+  // Join band: honeypot + "confirm you're human" pick, then hands off to WhatsApp
+  (function(){
+    const form = document.getElementById('joinForm');
+    const human = document.getElementById('human');
+    let picked = null;
+    human.querySelectorAll('.hic').forEach(btn => {
+      btn.addEventListener('click', () => {
+        human.querySelectorAll('.hic').forEach(b => b.classList.remove('sel'));
+        btn.classList.add('sel');
+        picked = btn.dataset.k;
+        human.classList.remove('err');
+      });
+    });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const hp = form.querySelector('.hp').value;
+      if (hp) return; // bot filled the honeypot
+      const [nombre, apellido, email] = form.querySelectorAll('input:not(.hp)');
+      if (!nombre.value.trim() || !email.value.trim()) return;
+      if (picked !== 'espacio') { human.classList.add('err'); return; }
+      const full = nombre.value.trim() + (apellido.value.trim() ? ' ' + apellido.value.trim() : '');
+      const msg = encodeURIComponent(`Hola MUBB Design, quiero recibir novedades.\nNombre: ${full}\nCorreo: ${email.value.trim()}`);
+      window.open(`https://wa.me/593939394576?text=${msg}`, '_blank');
+    });
+  })();
 </script>
 </body></html>
