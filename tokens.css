@@ -1,0 +1,37 @@
+/* MUBB Design design tokens — sampled from the client's screens (client screens/).
+   Brown band #32251d and black #000 were measured from the images. */
+:root {
+  --color-bg: #000000;
+  --color-bg-warm: #32251d;          /* textured brown bands (Studio, Home team, Prensa footer) */
+  --color-bg-warm-deep: #1a120d;     /* gradient end between black and brown */
+  --color-text: #ffffff;
+  --color-text-soft: rgba(255,255,255,.72);
+  --color-line: rgba(255,255,255,.85);   /* thin white rules (Prensa) */
+  --color-overlay: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 60%, #000 100%);
+
+  --font-body: "Montserrat", system-ui, sans-serif;
+  --fw-light: 300; --fw-regular: 400; --fw-semibold: 600;
+  --fs-label: .6875rem;              /* small captions under cards, footer */
+  --fs-body: .875rem;
+  --fs-lead: 1rem;
+  --fs-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --fs-h2: clamp(1.75rem, 3.6vw, 3rem);
+  --fs-hero: clamp(2.25rem, 5.2vw, 4.5rem);
+  --tracking-caps: .06em;
+  --lh-tight: 1.1; --lh-body: 1.55;
+  /* text is uppercase almost everywhere */
+  --text-transform: uppercase;
+
+  --radius-card: 20px;
+  --ratio-project: 3 / 4;
+  --ratio-swatch: 1 / 1;
+  --ratio-hero: 16 / 9;
+
+  --gutter: clamp(1rem, 5vw, 4.5rem);
+  --section-y: clamp(4rem, 10vw, 9rem);
+  --max-width: 1440px;
+
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur-fast: 250ms; --dur: 600ms; --dur-slow: 1000ms;
+}
+@media (prefers-reduced-motion: reduce) { :root { --dur-fast: 0ms; --dur: 0ms; --dur-slow: 0ms; } }

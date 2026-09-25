@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MUBB Design Wireframes</title>
+<style>
+:root{--brown:#32251d;--line:#555;}
+*{box-sizing:border-box}body{margin:0;background:#2a2a2a;color:#ddd;font:12px/1.4 Montserrat,system-ui,sans-serif}
+header.doc{padding:22px 30px;background:#111;border-bottom:1px solid #333}header.doc h1{margin:0 0 4px;font-size:19px;color:#fff}header.doc p{margin:0;color:#999}
+nav.toc{position:sticky;top:0;z-index:5;background:#111;padding:10px 30px;display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid #333}nav.toc a{color:#fff;text-decoration:none;font-weight:600}
+section.page{padding:26px 30px}section.page>h2{margin:0 0 4px;color:#fff;font-size:16px}section.page>.note{margin:0 0 14px;color:#aaa;max-width:900px}
+.row{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.dev{background:#000;border:1px solid #444}.dev .label{background:#555;color:#fff;padding:3px 10px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.d{width:900px}.m{width:290px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 22px;background:#000;color:#fff;letter-spacing:.06em;font-size:11px}
+.nav .lk{display:flex;gap:18px}.nav .on{font-weight:700}
+.logo{border:1px solid #888;padding:2px 8px;font-weight:600}
+.ph{background:#3b3b3b;color:#999;display:flex;align-items:center;justify-content:center;text-align:center;text-transform:uppercase;letter-spacing:.06em;font-size:10px;border:1px dashed #666}
+.hero{height:300px;align-items:flex-end;justify-content:flex-start;padding:24px;font-size:22px;color:#fff;text-align:left;flex-direction:column;justify-content:flex-end;align-items:flex-start;background:linear-gradient(#444,#111)}
+.hero small{font-size:11px;color:#ccc;max-width:320px;margin-top:6px}
+.band{padding:36px 30px}.brown{background:linear-gradient(#000,var(--brown))}.brown2{background:var(--brown)}
+h3{margin:0 0 8px;color:#fff;font-weight:300;font-size:22px;letter-spacing:.05em;text-transform:uppercase}h4{margin:0 0 4px;color:#fff;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+.grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}.g5{grid-template-columns:repeat(5,1fr)}
+.card{border-radius:20px}.tall{aspect-ratio:3/4}.sq{aspect-ratio:1/1}.wide{aspect-ratio:16/9}
+.cap{text-align:center;margin-top:5px;text-transform:uppercase;font-size:10px}
+.txt{height:7px;background:#444;margin:6px 0;border-radius:2px}.txt.m{width:80%}.txt.s{width:55%}
+.btn{display:inline-block;border:1px solid #fff;color:#fff;padding:8px 14px;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+.lnk{color:#fff;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+.circ{display:inline-flex;width:30px;height:30px;border:1px solid #fff;border-radius:50%;align-items:center;justify-content:center;color:#fff;margin-right:6px}
+.play{width:64px;height:64px;border:3px solid #fff;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px}
+.cta{padding:50px 30px;text-align:center;background:#000;color:#fff}.cta h3{font-size:24px;text-align:center}
+.foot{padding:16px 22px;background:#000;color:#aaa;font-size:10px;border-top:1px solid #222;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.field{border:1px solid #666;padding:8px 10px;color:#888;margin-bottom:8px}
+.ann{background:#fff8c5;color:#333;border:1px solid #e0d27a;padding:8px 10px;margin-top:12px;max-width:900px}
+.hr{border-top:1px solid #fff;margin:0 30px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.tag{background:#fff;color:#000;padding:1px 7px;font-size:10px;margin-right:6px}
+</style></head><body>
+<header class="doc"><h1>MUBB Design — Wireframes (Step 1)</h1><p>Follows the client's screens (client screens/). Dark low-fidelity. Pages marked NEW are not in the client's screens: mobile versions, portfolio index, contact.</p></header>
+<nav class="toc"><a href="#home">Home</a><a href="#studio">Studio</a><a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#proyecto">Project</a><a href="#prensa">Prensa</a><a href="#blog">Blog (new)</a><a href="#contacto">Contacto (new)</a><a href="#motion">Motion</a></nav>
+
+<section class="page" id="home"><h2>1. Home</h2><p class="note">Order from the client's screen. Header sits over the hero. Carousel and video are CMS blocks.</p><div class="row">
+<div class="dev d"><div class="label">Desktop</div>
+<div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span class="on">Home</span><span>Studio</span><span>Servicios</span><span>Portafolio</span><span>Prensa</span></span></div>
+<div class="ph hero" style="height:340px">Hero image / video<br><span style="font-size:22px;color:#fff">DISEÑAMOS EXPERIENCIAS</span><small>Creamos espacios que reflejan quien eres.</small></div>
+<div class="band brown"><h3>Espacios que inspiran</h3><div class="lnk">Diseño interior a medida</div><br><span class="lnk">Conoce más ⟶</span></div>
+<div class="band brown2"><div class="split"><div><h3>Proyectos</h3><div class="txt m"></div><span class="lnk">Ver todos los proyectos ⟶</span></div><div><div class="grid g3"><div><div class="ph card tall">Project</div><div class="cap">Oficina SG</div></div><div><div class="ph card tall">Project</div><div class="cap">Residencia SM</div></div><div><div class="ph card tall">Project</div><div class="cap">Residencia SK</div></div></div><div style="margin-top:8px"><span class="circ">‹</span><span class="circ">›</span></div></div></div></div>
+<div class="ph" style="height:230px;border:0"><div class="play">▶</div></div>
+<div class="band brown2"><div class="split"><div><h3>Team MUBB Design</h3><div class="txt m"></div></div><div class="grid g3"><div><div class="ph card tall">Person</div><div class="cap">Name<br>Role</div></div><div><div class="ph card tall">Person</div><div class="cap">Name</div></div><div><div class="ph card tall">Person</div><div class="cap">Name</div></div></div></div></div>
+<div class="cta"><h3>¿Listo para transformar tu espacio en una experiencia única?</h3><span class="btn">Solicitar cita</span></div>
+<div class="foot"><span>Forma parte de la filosofía MUBB · Showrooms Quito / Manta / Guayaquil</span><span>Términos · Trabaja con nosotros · ventas@mubb.store</span></div></div>
+<div class="dev m"><div class="label">Mobile (new)</div>
+<div class="nav"><span class="logo">MUBB DESIGN</span><span>☰</span></div>
+<div class="ph hero" style="height:280px">Hero<br><span style="font-size:18px;color:#fff">DISEÑAMOS EXPERIENCIAS</span></div>
+<div class="band brown"><h3 style="font-size:17px">Espacios que inspiran</h3><span class="lnk">Conoce más ⟶</span></div>
+<div class="band brown2"><h3 style="font-size:17px">Proyectos</h3><div class="ph card tall" style="width:70%">Project (swipe)</div><div class="cap" style="text-align:left">Oficina SG</div><span class="lnk">Ver todos ⟶</span></div>
+<div class="ph" style="height:170px;border:0"><div class="play" style="width:48px;height:48px">▶</div></div>
+<div class="band brown2"><h3 style="font-size:17px">Team</h3><div class="grid g2"><div class="ph card tall">1</div><div class="ph card tall">2</div></div></div>
+<div class="cta" style="padding:30px 16px"><h3 style="font-size:16px">¿Listo para transformar tu espacio?</h3><span class="btn">Solicitar cita</span></div>
+<div class="foot">Footer stacked</div></div></div></section>
+
+<section class="page" id="studio"><h2>2. Studio</h2><div class="row">
+<div class="dev d"><div class="label">Desktop</div>
+<div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span class="on">Studio</span><span>Servicios</span><span>Portafolio</span><span>Prensa</span></span></div>
+<div class="ph hero" style="height:300px">Hero photo<br><span style="font-size:22px;color:#fff">MUBB DESIGN <b>STUDIO</b></span><small>Statement paragraph, 5 lines</small></div>
+<div class="band brown2"><div class="split"><div><h3>Más de 2.000 acabados</h3><div class="txt m"></div></div><div><div class="grid g3"><div><div class="ph card sq">Swatch</div><div class="cap">Lusso – Oyster</div></div><div><div class="ph card sq">Swatch</div><div class="cap">Luxxo Cooper</div></div><div><div class="ph card sq">Swatch</div><div class="cap">Laurent – DKLAU</div></div></div><div style="margin-top:8px"><span class="circ">‹</span><span class="circ">›</span></div></div></div></div>
+<div class="band brown2" style="text-align:center"><h3>El origen de cada espacio.</h3><div class="grid g3" style="text-align:left"><div><div class="ph card tall">Founder</div><div class="cap">Name · Role</div><div class="txt"></div><div class="txt m"></div><div class="txt"></div><div class="txt s"></div></div><div><div class="ph card tall">Founder</div><div class="cap">Name · Role</div><div class="txt"></div><div class="txt m"></div><div class="txt"></div></div><div><div class="ph card tall">Founder</div><div class="cap">Name · Role</div><div class="txt"></div><div class="txt m"></div><div class="txt"></div></div></div></div>
+<div class="cta"><h3>¿Estás listo para crear algo extraordinario?</h3><span class="btn" style="font-weight:700">Solicitar cita</span></div><div class="foot">Footer</div></div>
+<div class="dev m"><div class="label">Mobile (new)</div><div class="nav"><span class="logo">MUBB DESIGN</span><span>☰</span></div><div class="ph hero" style="height:250px">Hero + statement</div>
+<div class="band brown2"><h3 style="font-size:17px">+2.000 acabados</h3><div class="grid g2"><div class="ph card sq">Swatch</div><div class="ph card sq">Swatch</div></div></div>
+<div class="band brown2"><h3 style="font-size:17px">El origen</h3><div class="ph card tall">Founder 1</div><div class="txt"></div><div class="txt m"></div><div class="ph card tall" style="margin-top:10px">Founder 2</div></div><div class="cta" style="padding:26px 16px"><span class="btn">Solicitar cita</span></div></div></div></section>
+
+<section class="page" id="servicios"><h2>3. Servicios</h2><p class="note">Six full-width bands (the client's doc adds "Mobiliario a medida" beyond the five shown on screen); text side alternates. Each band can link to a detail page (open question).</p><div class="row">
+<div class="dev d"><div class="label">Desktop</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span>Studio</span><span class="on">Servicios</span><span>Portafolio</span><span>Prensa</span></span></div>
+<div class="ph hero" style="height:230px">Hero<br><span style="font-size:24px;color:#fff">SERVICIOS</span></div>
+<div class="ph" style="height:150px;justify-content:flex-start;padding-left:30px;border:0"><div style="color:#fff;text-align:left;font-size:18px">DISEÑO DE INTERIORES<br><small>El alma del estudio</small></div></div>
+<div class="ph" style="height:150px;justify-content:flex-end;padding-right:30px;border:0"><div style="color:#fff;text-align:right;font-size:18px">RESIDENCIAS<br><small>La declaración más íntima</small></div></div>
+<div class="ph" style="height:150px;justify-content:flex-start;padding-left:30px;border:0"><div style="color:#fff;text-align:left;font-size:18px">PROYECTOS HOTELEROS Y DE HOSPITALIDAD</div></div>
+<div class="ph" style="height:150px;justify-content:flex-end;padding-right:30px;border:0"><div style="color:#fff;text-align:right;font-size:18px">ESPACIOS COMERCIALES</div></div>
+<div class="ph" style="height:150px;justify-content:flex-start;padding-left:30px;border:0"><div style="color:#fff;text-align:left;font-size:18px">YATES Y ESPACIOS NÁUTICOS</div></div>
+<div class="ph" style="height:150px;justify-content:flex-end;padding-right:30px;border:0"><div style="color:#fff;text-align:right;font-size:18px">MOBILIARIO A MEDIDA<br><small>En MUBB el mobiliario nunca es genérico</small></div></div>
+<div class="cta"><h3>¿Cuál de nuestros servicios es ideal para ti?</h3><span class="btn">Solicitar cita</span></div><div class="foot">Footer</div></div>
+<div class="dev m"><div class="label">Mobile (new)</div><div class="nav"><span class="logo">MUBB DESIGN</span><span>☰</span></div><div class="ph hero" style="height:200px">SERVICIOS</div>
+<div class="ph" style="height:120px;border:0;color:#fff;font-size:14px">1 Diseño de interiores</div><div class="ph" style="height:120px;border:0;color:#fff;font-size:14px">2 Residencias</div><div class="ph" style="height:120px;border:0;color:#fff;font-size:14px">3 Hotelero</div><div class="ph" style="height:120px;border:0;color:#fff;font-size:14px">4 Comercial</div><div class="ph" style="height:120px;border:0;color:#fff;font-size:14px">5 Náutico</div><div class="ph" style="height:120px;border:0;color:#fff;font-size:14px">6 Mobiliario a medida</div><div class="cta" style="padding:26px 16px"><span class="btn">Solicitar cita</span></div></div></div></section>
+
+<section class="page" id="portafolio"><h2>4. Portafolio index (new)</h2><p class="note">Not in the client's screens. Uses the same 3-column portrait card grid they show under a project. Optional filter by typology.</p>
+<div class="dev d"><div class="label">Desktop</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span>Studio</span><span>Servicios</span><span class="on">Portafolio</span><span>Prensa</span></span></div>
+<div class="band"><h3 style="text-align:center;font-size:30px">Proyectos</h3><div style="text-align:center;margin-bottom:14px"><span class="btn">Todos</span> <span class="btn" style="border-color:#666;color:#999">Residencial</span> <span class="btn" style="border-color:#666;color:#999">Hotelero</span> <span class="btn" style="border-color:#666;color:#999">Comercial</span></div>
+<div class="grid g3" style="width:80%;margin:auto"><div><div class="ph card tall">Project</div><div class="cap">Residencia SM</div></div><div><div class="ph card tall">Project</div><div class="cap">Oficina SG</div></div><div><div class="ph card tall">Project</div><div class="cap">Residencia MA</div></div><div><div class="ph card tall">Project</div><div class="cap">Residencia HA</div></div><div><div class="ph card tall">Project</div><div class="cap">Residencia BF</div></div><div><div class="ph card tall">Project</div><div class="cap">Residencia G</div></div></div></div>
+<div class="cta"><h3>¿Listo para crear algo verdaderamente único?</h3><span class="btn">Solicitar cita</span></div></div></section>
+
+<section class="page" id="proyecto"><h2>5. Project page (shown as "Portafolio" in the client's screens)</h2><p class="note">Narrative, not a gallery: hero video, story text, facts, then the full image sequence, then more projects. The client's screen shows hero + text + facts + project grid; the gallery sequence is added between text and the grid.</p><div class="row">
+<div class="dev d"><div class="label">Desktop</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span>Studio</span><span>Servicios</span><span class="on">Portafolio</span><span>Prensa</span></span></div>
+<div class="ph hero" style="height:300px;align-items:center;justify-content:center"><div class="play">▶</div></div>
+<div class="band"><div style="max-width:640px;margin:auto"><div class="txt"></div><div class="txt m"></div><div class="txt"></div><div class="txt s"></div><br><b style="color:#fff">UBICACIÓN:</b> Manta, Ecuador<br><b style="color:#fff">TIPOLOGÍA:</b> Residencial · Penthouse</div></div>
+<div class="band" style="padding-top:0"><span class="tag">added</span> Image sequence: full-width, half + half, detail crop, material close-ups<div class="ph" style="height:180px;margin-top:8px">Full-width image</div><div class="grid g2" style="margin-top:8px"><div class="ph" style="height:150px">Image</div><div class="ph" style="height:150px">Image</div></div></div>
+<div class="band"><h3 style="text-align:center;font-size:28px">Proyectos</h3><div class="grid g3" style="width:80%;margin:auto"><div class="ph card tall">Project</div><div class="ph card tall">Project</div><div class="ph card tall">Project</div></div></div>
+<div class="cta"><h3>¿Listo para crear algo verdaderamente único?</h3><span class="btn">Solicitar cita</span></div></div>
+<div class="dev m"><div class="label">Mobile (new)</div><div class="nav"><span class="logo">MUBB DESIGN</span><span>☰</span></div><div class="ph hero" style="height:230px"><div class="play" style="width:48px;height:48px">▶</div></div><div class="band"><div class="txt"></div><div class="txt m"></div><div class="txt"></div><b style="color:#fff">UBICACIÓN</b> Manta<br><b style="color:#fff">TIPOLOGÍA</b> Residencial</div><div class="ph" style="height:170px">Image</div><div class="ph" style="height:170px;margin-top:6px">Image</div><div class="band"><h3 style="font-size:16px">Proyectos</h3><div class="grid g2"><div class="ph card tall">P</div><div class="ph card tall">P</div></div></div></div></div></section>
+
+<section class="page" id="prensa"><h2>6. Prensa</h2><div class="row">
+<div class="dev d"><div class="label">Desktop</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span>Studio</span><span>Servicios</span><span>Portafolio</span><span class="on">Prensa</span></span></div>
+<div class="band"><h3 style="font-size:34px">Prensa</h3><div class="txt m" style="width:40%"></div></div><div class="hr"></div>
+<div class="band"><div class="split"><div><b style="color:#fff;font-size:20px">2023</b><div class="ph" style="height:50px;margin:8px 0">Outlet logo (Forbes)</div><div class="txt"></div><div class="txt m"></div></div><div class="ph" style="height:160px">Press image</div></div></div><div class="hr"></div>
+<div class="band"><div class="split"><div><b style="color:#fff;font-size:20px">2024</b><div class="ph" style="height:50px;margin:8px 0">Logo (Clave!)</div><div class="txt"></div><div class="txt m"></div></div><div class="ph" style="height:160px">Press image</div></div></div><div class="hr"></div>
+<div class="band"><div class="split"><div><b style="color:#fff;font-size:20px">2026</b><div class="ph" style="height:50px;margin:8px 0">Logo (Casas Project)</div><div class="txt"></div></div><div class="ph" style="height:160px">Press image</div></div></div>
+<div class="band brown" style="text-align:center"><h3>Marcas aliadas de <b>alto nivel</b></h3><div class="grid g3"><div class="ph" style="height:60px">Pedral</div><div class="ph" style="height:60px">Dekton</div><div class="ph" style="height:60px">Cotopaxi</div></div></div><div class="foot">Footer</div></div>
+<div class="dev m"><div class="label">Mobile (new)</div><div class="nav"><span class="logo">MUBB DESIGN</span><span>☰</span></div><div class="band"><h3 style="font-size:22px">Prensa</h3></div><div class="hr" style="margin:0 16px"></div><div class="band"><b style="color:#fff">2023</b><div class="ph" style="height:40px;margin:6px 0">Logo</div><div class="ph" style="height:130px">Image</div><div class="txt m"></div></div><div class="hr" style="margin:0 16px"></div><div class="band"><b style="color:#fff">2024</b><div class="ph" style="height:40px;margin:6px 0">Logo</div><div class="ph" style="height:130px">Image</div></div><div class="band brown"><h3 style="font-size:16px">Marcas aliadas</h3><div class="grid g3"><div class="ph" style="height:40px">A</div><div class="ph" style="height:40px">B</div><div class="ph" style="height:40px">C</div></div></div></div></div></section>
+
+<section class="page" id="blog"><h2>7. Blog (new — decision, not in the client's screens)</h2><p class="note">The client's nav lists "Blog" in ES and EN with no spec. Built as a simple editorial list + post, reachable from the footer rather than the primary nav, so it doesn't compete with Portafolio for attention. Structure only — content and cadence to be defined later.</p>
+<div class="row"><div class="dev d"><div class="label">Desktop — index</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span>Studio</span><span>Servicios</span><span>Portafolio</span><span>Prensa</span></span></div>
+<div class="band"><h3 style="text-align:center;font-size:28px">Blog</h3><div class="grid g3" style="margin-top:14px"><div><div class="ph card tall">Cover</div><div class="cap">Post title</div></div><div><div class="ph card tall">Cover</div><div class="cap">Post title</div></div><div><div class="ph card tall">Cover</div><div class="cap">Post title</div></div></div></div></div>
+<div class="dev d"><div class="label">Desktop — post</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span></div><div class="ph hero" style="height:220px">Cover</div><div class="band"><h3 style="font-size:24px">Post title</h3><div class="txt"></div><div class="txt m"></div><div class="txt"></div></div></div></div></section>
+
+<section class="page" id="contacto"><h2>8. Contacto / Solicitar cita (new)</h2><p class="note">Every "Solicitar cita" button lands here. The form posts to our own server route, emails MUBB, and can later feed a CRM or WhatsApp without touching the site. Footer also links to two small pages built from the same form pattern: <b>Trabaja con nosotros</b> (careers) and <b>¿Eres proveedor?</b> (suppliers) — not drawn separately, same layout as this page with different fields.</p><div class="row">
+<div class="dev d"><div class="label">Desktop</div><div class="nav"><span class="logo">MUBB DESIGN STUDIO</span><span class="lk"><span>Home</span><span>Studio</span><span>Servicios</span><span>Portafolio</span><span>Prensa</span></span></div>
+<div class="band brown"><div class="split"><div><h3 style="font-size:30px">Solicitar cita</h3><div class="txt m"></div><div class="txt"></div><br>Showrooms: Quito · Manta · Guayaquil<br>ventas@mubb.store · WhatsApp button</div>
+<div><div class="field">Nombre</div><div class="field">Email</div><div class="field">Teléfono</div><div class="field">Tipo de proyecto ▾ (Residencia · Hotelero · Comercial · Náutico · Otro)</div><div class="field" style="height:80px">Mensaje</div><div class="field">Fecha preferida</div><span class="btn">Enviar</span></div></div></div><div class="foot">Footer</div></div>
+<div class="dev m"><div class="label">Mobile (new)</div><div class="nav"><span class="logo">MUBB DESIGN</span><span>☰</span></div><div class="band brown"><h3 style="font-size:20px">Solicitar cita</h3><div class="field">Nombre</div><div class="field">Email</div><div class="field">Teléfono</div><div class="field">Tipo de proyecto ▾</div><div class="field" style="height:70px">Mensaje</div><span class="btn">Enviar</span></div></div></div>
+<div class="ann"><b>States:</b> sending, success ("Gracias, te contactaremos pronto"), error with retry. Spam protection (honeypot + rate limit), no visible captcha.</div></section>
+
+<section class="page" id="motion"><h2>9. Motion and behavior</h2>
+<div class="dev" style="max-width:900px"><div style="padding:16px;line-height:1.7">
+<span class="tag">page</span>Fade + slight rise on entering a page; header turns solid black after scrolling past the hero.<br>
+<span class="tag">images</span>Reveal on scroll (fade, 8 px rise); slow zoom on hero (1.00 → 1.05). Project cards lift and brighten on hover.<br>
+<span class="tag">carousels</span>Drag / swipe / arrow buttons, snap points, no autoplay.<br>
+<span class="tag">video</span>Hero video muted and looping, poster image while loading; full video opens in a lightbox.<br>
+<span class="tag">nav</span>Full-screen overlay menu on mobile.<br>
+<span class="tag">rules</span>Respect prefers-reduced-motion; all durations in tokens.css; images served as AVIF/WebP at the right size (photo-heavy pages must stay fast).</div></div></section>
+</body></html>
