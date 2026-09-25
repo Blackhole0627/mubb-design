@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MUBB Design Studio</title>
+<style>
+@font-face{font-family:'Montserrat';src:url('fonts/Montserrat-Regular.ttf');font-weight:300 400;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('fonts/Montserrat-Medium.ttf');font-weight:500;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('fonts/Montserrat-SemiBold.ttf');font-weight:600 700;font-display:swap}
+:root{--brown:#241a13;--brown2:#3a2c20;--gold:#cba876;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',system-ui,sans-serif;background:#000;color:#fff;font-weight:300}
+img{display:block;max-width:100%}
+.wrap{max-width:1440px;margin:0 auto}
+
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;transition:background .3s,padding .3s;background:linear-gradient(to bottom, rgba(0,0,0,.55), transparent)}
+header.solid{background:#000;padding:16px 48px;border-bottom:1px solid #1c1c1c}
+.logo{font-size:16px;letter-spacing:.08em}
+.logo b{font-weight:600}
+.logo span{font-size:9px;letter-spacing:.3em;display:block;color:#bbb;margin-top:2px}
+nav{display:flex;gap:34px}
+nav a{color:#fff;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+nav a.on{font-weight:600;opacity:1}
+nav a:hover{opacity:1}
+
+.hero{position:relative;height:100vh;min-height:560px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.75) 10%, rgba(0,0,0,.15) 45%, rgba(0,0,0,.35) 100%)}
+.hero .content{position:absolute;left:48px;bottom:80px;z-index:2;max-width:640px}
+.hero h1{font-weight:300;font-size:clamp(2.4rem,6vw,4.6rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;margin-bottom:18px}
+.hero p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#ddd}
+
+.band{padding:110px 48px;background:linear-gradient(180deg,#000,var(--brown) 40%,var(--brown2))}
+.band.image{background:none;position:relative;padding:0;height:520px}
+.band.image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.band.image .in{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 48px;max-width:560px}
+.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+h2{font-weight:300;font-size:clamp(1.7rem,3.4vw,2.6rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.15;margin-bottom:14px}
+.link{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:22px;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px}
+.link:hover{border-color:#fff}
+
+.proyectos{background:var(--brown2);padding:100px 48px}
+.proyectos .head{display:flex;justify-content:space-between;align-items:flex-end;max-width:1344px;margin:0 auto 46px;flex-wrap:wrap;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1344px;margin:0 auto}
+.card{position:relative;aspect-ratio:3/4;overflow:hidden;background:#1a1a1a}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.card:hover img{transform:scale(1.05)}
+.card .cap{position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(to top, rgba(0,0,0,.75), transparent);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+.video{position:relative;height:70vh;min-height:420px;background:#111}
+.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
+.video .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.play span{width:78px;height:78px;border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}
+
+.team{background:var(--brown2);padding:100px 48px;text-align:left}
+.team .head{max-width:1344px;margin:0 auto 50px}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1344px;margin:0 auto}
+.tcard img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;filter:grayscale(1)}
+.tcard .name{margin-top:16px;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+.tcard .role{font-size:10.5px;color:#aaa;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+
+.cta{background:#000;text-align:center;padding:110px 24px}
+.cta h2{max-width:760px;margin:0 auto 26px}
+.btn{display:inline-block;border:1px solid #fff;color:#fff;text-decoration:none;padding:14px 34px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.btn:hover{background:#fff;color:#000}
+
+footer{background:#000;border-top:1px solid #1a1a1a;padding:34px 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:11px;color:#999}
+footer b{color:#fff;display:block;margin-bottom:8px;letter-spacing:.08em}
+footer .col{min-width:180px}
+
+@media (max-width:820px){
+  nav{display:none}
+  .grid3,.tgrid{grid-template-columns:1fr}
+  header{padding:20px 24px}
+  .band{padding:70px 24px}
+  .hero .content{left:24px;bottom:56px}
+}
+</style></head><body>
+
+<header id="hdr">
+  <div class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></div>
+  <nav>
+    <a href="#" class="on">Home</a><a href="#">Studio</a><a href="#">Servicios</a><a href="#">Portafolio</a><a href="#">Prensa</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="img/hero.jpg" alt="MUBB Design Studio">
+  <div class="content">
+    <h1>Diseñamos<br>experiencias</h1>
+    <p>Creamos espacios que reflejan quien eres.</p>
+  </div>
+</section>
+
+<section class="band image">
+  <img src="img/pared.jpg" alt="">
+  <div class="in">
+    <div class="eyebrow">Diseño interior a medida</div>
+    <h2>Espacios que inspiran</h2>
+    <a class="link" href="#">Conoce más →</a>
+  </div>
+</section>
+
+<section class="proyectos">
+  <div class="head">
+    <div>
+      <h2 style="margin-bottom:0">Proyectos</h2>
+      <p style="color:#bbb;font-size:12px;letter-spacing:.05em;text-transform:uppercase;margin-top:10px">Explora nuestros proyectos más recientes de diseño interior</p>
+    </div>
+    <a class="link" href="#" style="margin-top:0">Ver todos los proyectos →</a>
+  </div>
+  <div class="grid3">
+    <div class="card"><img src="img/proj1.jpg" alt="Oficina SG"><div class="cap">Oficina SG</div></div>
+    <div class="card"><img src="img/proj2.jpg" alt="Skorpios"><div class="cap">Residencia SK — Skorpios</div></div>
+    <div class="card"><img src="img/proj3.jpg" alt="Residencia MA"><div class="cap">Residencia MA</div></div>
+  </div>
+</section>
+
+<section class="video">
+  <img src="img/proj2.jpg" alt="">
+  <div class="play"><span>▶</span></div>
+</section>
+
+<section class="team">
+  <div class="head">
+    <h2 style="margin-bottom:0">Team MUBB Design</h2>
+    <p style="color:#bbb;font-size:12px;letter-spacing:.05em;text-transform:uppercase;margin-top:10px">El diseño empieza con nosotros</p>
+  </div>
+  <div class="tgrid">
+    <div class="tcard"><img src="img/team1.jpg" alt="Joel Dávalos"><div class="name">Joel Dávalos</div><div class="role">Fundador · Director General · Director Creativo</div></div>
+    <div class="tcard"><img src="img/team2.jpg" alt="Brinny Dávalos"><div class="name">Brinny Dávalos</div><div class="role">Directora Comercial</div></div>
+    <div class="tcard"><img src="img/team3.jpg" alt="Adrián Quishpe"><div class="name">Adrián Quishpe</div><div class="role">Director de Producción</div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>¿Listo para transformar tu espacio en una experiencia única?</h2>
+  <a class="btn" href="#">Solicitar cita</a>
+</section>
+
+<footer>
+  <div class="col"><b>Forma parte de la filosofía MUBB</b>Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31<br>Miami — Por invitación privada</div>
+  <div class="col"><b>Enlaces</b>Términos y condiciones<br>Política de privacidad<br>Trabaja con nosotros</div>
+  <div class="col"><b>Contáctanos</b>ventas@mubb.store<br>+593 93 939 4576<br>Instagram · Facebook · TikTok · YouTube</div>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('solid', scrollY > 80));
+</script>
+</body></html>
