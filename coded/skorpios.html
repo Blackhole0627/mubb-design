@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skorpios — Residencia SK | MUBB Design</title>
+<meta name="description" content="Skorpios: penthouse residencial en Manta, Ecuador, por MUBB Design Studio.">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<header id="hdr">
+  <div class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></div>
+  <nav>
+    <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html" class="on">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<section class="video" style="height:80vh">
+  <img src="img/video-poster.jpg" alt="Skorpios">
+  <button class="play" id="playVideo" aria-label="Ver video"><span>▶</span></button>
+</section>
+<div class="modal" id="videoModal">
+  <button class="close" id="closeVideo" aria-label="Cerrar">×</button>
+  <video id="modalVideo" controls playsinline poster="img/video-poster.jpg" src="video/skorpios.mp4"></video>
+</div>
+
+<section class="band" style="padding-bottom:60px">
+  <div class="wrap" style="max-width:760px;margin:0 auto">
+    <p style="font-size:15px;line-height:1.9;color:#ddd">Manta, Ecuador. Último piso del edificio más exclusivo de la ciudad. Frente al océano Pacífico.</p>
+    <p style="font-size:15px;line-height:1.9;color:#ddd;margin-top:20px">Skorpios no sigue referencias. Es una referencia en sí mismo. Concebido desde el contraste entre la calidez de la madera y la nobleza de la piedra, entre lo orgánico y lo arquitectónico, es un espacio que establece su propio estándar desde la primera mirada.</p>
+    <p style="font-size:15px;line-height:1.9;color:#ddd;margin-top:20px">El recibidor en espejo y piedra italiana, con luz focal, declara desde la entrada lo que este proyecto es. Dekton y piedra italiana recorren superficies con presencia y carácter. El roble marfil y roble americano en acabado lacado contrastan con volúmenes en negro profundo. Los lavamanos esculpidos en piedra se convierten en objetos de autor. El tapiz italiano, la iluminación en cristal diseñada a medida y los espejos completan una atmósfera que cambia con cada hora del día: íntima, profunda e irrepetible.</p>
+    <p style="font-size:16px;letter-spacing:.03em;color:var(--gold);margin-top:26px">Skorpios no es un apartamento frente al mar. Es el mar, reinterpretado desde adentro.</p>
+    <div style="display:flex;gap:60px;margin-top:40px;flex-wrap:wrap">
+      <div><div class="l" style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#888">Ubicación</div><div style="margin-top:6px">Manta, Ecuador</div></div>
+      <div><div class="l" style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#888">Tipología</div><div style="margin-top:6px">Residencial · Penthouse</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="proyectos">
+  <div class="grid3">
+    <div class="card"><img src="img/proj1.jpg" alt="Oficina SG"><div class="cap">Oficina SG</div></div>
+    <div class="card"><img src="img/proj3.jpg" alt="Residencia MA"><div class="cap">Residencia MA</div></div>
+    <div class="card"><img src="img/proj4.jpg" alt="Departamento GM"><div class="cap">Departamento GM</div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>¿Listo para crear algo verdaderamente único?</h2>
+  <a class="btn" href="contacto.html" style="border-color:#fff">Solicitar cita</a>
+</section>
+
+<footer class="site" id="footer">
+  <div class="f-in">
+    <div>
+      <div class="f-logo">MUBB <b>DESIGN</b></div>
+      <p class="f-copy">© 2026 MUBB Design Studio · Todos los derechos reservados.</p>
+    </div>
+    <div class="f-list">
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Quito — Av. Orellana y González Suárez</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Miami — Por invitación privada</span></div>
+      <div class="f-li"><span class="ic">☎</span><span>+593 93 939 4576</span></div>
+      <div class="f-li"><span class="ic">✉</span><span>ventas@mubb.store</span></div>
+    </div>
+    <div class="f-soc"><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    <p class="f-tag">MUBB Design Studio — diseño de interiores, arquitectura y mobiliario a medida. Ecuador · Estados Unidos.</p>
+    <hr class="f-rule">
+    <nav class="f-nav">
+      <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a href="contacto.html?tipo=trabaja">Trabaja con nosotros</a><a href="terminos.html">Términos de uso</a><a href="privacidad.html">Política de privacidad</a>
+    </nav>
+    <div class="f-bottom"><span>Quito · Manta · Guayaquil · Miami</span><span>Diseñado y desarrollado a medida para MUBB</span></div>
+  </div>
+  <a class="f-top" href="#hdr" aria-label="Subir">↑</a>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
+  (function(){
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    document.getElementById('playVideo').onclick = () => { modal.classList.add('on'); video.play().catch(()=>{}); };
+    document.getElementById('closeVideo').onclick = () => { modal.classList.remove('on'); video.pause(); };
+    modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('on'); video.pause(); } });
+  })();
+</script>
+</body></html>

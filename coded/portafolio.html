@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portafolio — MUBB Design</title>
+<meta name="description" content="Proyectos de diseño de interiores, residencias y espacios corporativos por MUBB Design Studio.">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<header id="hdr">
+  <div class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></div>
+  <nav>
+    <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html" class="on">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<section class="pagehero">
+  <img src="img/proj2.jpg" alt="Portafolio MUBB Design">
+  <div class="in">
+    <h1>Portafolio</h1>
+    <p>Cada proyecto nace de una pregunta: qué debe sentir quien entra, y cómo debe reflejar al mundo la identidad de quien lo habita.</p>
+  </div>
+</section>
+
+<section style="padding:70px 48px 0">
+  <div class="filters" id="filters">
+    <button class="on" data-f="todos">Todos</button>
+    <button data-f="residencial">Residencial</button>
+    <button data-f="corporativo">Corporativo</button>
+  </div>
+</section>
+
+<section class="pgrid" id="grid">
+  <a class="card" href="skorpios.html" data-cat="residencial" style="aspect-ratio:3/4;display:block"><img src="img/proj2.jpg" alt="Skorpios" style="width:100%;height:100%;object-fit:cover"><div class="cap">Residencia SK — Skorpios<br><span style="opacity:.7;font-size:10px">Manta · Residencial / Penthouse</span></div></a>
+  <a class="card" href="#" data-cat="corporativo" style="aspect-ratio:3/4;display:block"><img src="img/proj1.jpg" alt="Oficina SG" style="width:100%;height:100%;object-fit:cover"><div class="cap">Oficina SG<br><span style="opacity:.7;font-size:10px">Ambato · Corporativo / Oficinas</span></div></a>
+  <a class="card" href="#" data-cat="residencial" style="aspect-ratio:3/4;display:block"><img src="img/proj3.jpg" alt="Residencia MA" style="width:100%;height:100%;object-fit:cover"><div class="cap">Residencia MA<br><span style="opacity:.7;font-size:10px">Residencial</span></div></a>
+  <a class="card" href="#" data-cat="residencial" style="aspect-ratio:3/4;display:block"><img src="img/proj4.jpg" alt="Departamento GM" style="width:100%;height:100%;object-fit:cover"><div class="cap">Departamento GM<br><span style="opacity:.7;font-size:10px">Residencial</span></div></a>
+  <a class="card" href="#" data-cat="residencial" style="aspect-ratio:3/4;display:block"><img src="img/proj5.jpg" alt="Residencia SG" style="width:100%;height:100%;object-fit:cover"><div class="cap">Residencia SG<br><span style="opacity:.7;font-size:10px">Residencial</span></div></a>
+</section>
+<p style="text-align:center;color:#888;font-size:11.5px;padding:0 24px 60px">Faltan por confirmar con el cliente: Residencia HA, Residencia BF y Residencia G, y las fotos definitivas de cada proyecto.</p>
+
+<section class="cta">
+  <h2>¿Listo para crear algo verdaderamente único?</h2>
+  <a class="btn" href="contacto.html" style="border-color:#fff">Solicitar cita</a>
+</section>
+
+<footer class="site" id="footer">
+  <div class="f-in">
+    <div>
+      <div class="f-logo">MUBB <b>DESIGN</b></div>
+      <p class="f-copy">© 2026 MUBB Design Studio · Todos los derechos reservados.</p>
+    </div>
+    <div class="f-list">
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Quito — Av. Orellana y González Suárez</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</span></div>
+      <div class="f-li"><span class="ic">📍</span><span>Miami — Por invitación privada</span></div>
+      <div class="f-li"><span class="ic">☎</span><span>+593 93 939 4576</span></div>
+      <div class="f-li"><span class="ic">✉</span><span>ventas@mubb.store</span></div>
+    </div>
+    <div class="f-soc"><a href="#">Instagram</a><a href="#">Facebook</a></div>
+    <p class="f-tag">MUBB Design Studio — diseño de interiores, arquitectura y mobiliario a medida. Ecuador · Estados Unidos.</p>
+    <hr class="f-rule">
+    <nav class="f-nav">
+      <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a><a href="contacto.html?tipo=trabaja">Trabaja con nosotros</a><a href="terminos.html">Términos de uso</a><a href="privacidad.html">Política de privacidad</a>
+    </nav>
+    <div class="f-bottom"><span>Quito · Manta · Guayaquil · Miami</span><span>Diseñado y desarrollado a medida para MUBB</span></div>
+  </div>
+  <a class="f-top" href="#hdr" aria-label="Subir">↑</a>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
+
+  const buttons = document.querySelectorAll('#filters button');
+  const cards = document.querySelectorAll('#grid .card');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const f = b.dataset.f;
+    cards.forEach(c => c.style.display = (f === 'todos' || c.dataset.cat === f) ? '' : 'none');
+  }));
+</script>
+</body></html>
