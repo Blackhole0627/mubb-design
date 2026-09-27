@@ -224,6 +224,7 @@ header.on-light .hbtn{border-color:rgba(255,255,255,.6)}
   header nav.open{transform:translateX(0);display:flex}
   header nav.open ~ .hbtn{color:#fff;border-color:rgba(255,255,255,.5);position:relative;z-index:70}
   .proj-stage{min-height:340px}
+  .t-stage{min-height:520px}
   .t-arrows{margin-top:16px}
   header nav a{width:100%;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:#fff}
   .hbtn{display:flex}
