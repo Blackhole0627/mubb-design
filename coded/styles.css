@@ -3,7 +3,8 @@
 @font-face{font-family:'Montserrat';src:url('fonts/Montserrat-SemiBold.ttf');font-weight:600 700;font-display:swap}
 :root{--brown:#241a13;--brown2:#3a2c20;--gold:#cba876;--ease:cubic-bezier(.22,.61,.36,1);}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Montserrat',system-ui,sans-serif;background:#000;color:#fff;font-weight:300}
+html{overflow-x:hidden;max-width:100%}
+body{font-family:'Montserrat',system-ui,sans-serif;background:#000;color:#fff;font-weight:300;overflow-x:hidden;max-width:100%}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1440px;margin:0 auto}
