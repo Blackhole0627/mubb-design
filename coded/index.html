@@ -10,7 +10,7 @@
 </head><body>
 
 <header id="hdr">
-  <div class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></div>
+  <a href="index.html" class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></a>
   <nav>
     <a href="index.html" class="on">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
   </nav>
@@ -43,7 +43,7 @@
   </nav>
 </section>
 
-<section class="stats">
+<section class="stats" data-theme="light">
   <div class="stats-grid">
     <div class="stat"><div class="n">20+</div><div class="l">Años de trayectoria</div></div>
     <div class="stat"><div class="n">2.000+</div><div class="l">Acabados exclusivos</div></div>
@@ -69,7 +69,7 @@
     </div>
     <a class="link" href="portafolio.html" style="margin-top:0">Ver todos los proyectos →</a>
   </div>
-  <div class="t-stage" id="pStage" style="min-height:460px">
+  <div class="t-stage proj-stage" id="pStage">
     <article class="t-card" data-i="0" style="background:none;padding:0;width:min(320px,70%)"><a href="portafolio.html"><img src="img/proj1.jpg" alt="Oficina SG" style="width:100%;aspect-ratio:3/4;object-fit:cover"><div class="cap" style="position:static;background:none;padding:14px 0 0;text-align:center">Oficina SG</div></a></article>
     <article class="t-card" data-i="1" style="background:none;padding:0;width:min(320px,70%)"><a href="portafolio.html"><img src="img/proj2.jpg" alt="Skorpios" style="width:100%;aspect-ratio:3/4;object-fit:cover"><div class="cap" style="position:static;background:none;padding:14px 0 0;text-align:center">Residencia SK — Skorpios</div></a></article>
     <article class="t-card" data-i="2" style="background:none;padding:0;width:min(320px,70%)"><a href="portafolio.html"><img src="img/proj3.jpg" alt="Residencia MA" style="width:100%;aspect-ratio:3/4;object-fit:cover"><div class="cap" style="position:static;background:none;padding:14px 0 0;text-align:center">Residencia MA</div></a></article>
@@ -90,6 +90,7 @@
 <div class="modal" id="videoModal">
   <button class="close" id="closeVideo" aria-label="Cerrar">×</button>
   <video id="modalVideo" controls playsinline poster="img/video-poster.jpg" src="video/skorpios.mp4"></video>
+  <div class="hint">Toca × o presiona ESC para cerrar</div>
 </div>
 
 <section class="team">
@@ -200,7 +201,19 @@
 
 <script>
   const hdr = document.getElementById('hdr');
-  addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
+  const lightSections = document.querySelectorAll('[data-theme="light"]');
+  function updateHeader(){
+    if (scrollY <= 60) { hdr.classList.remove('on-dark','on-light'); return; }
+    let onLight = false;
+    lightSections.forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      if (r.top <= 40 && r.bottom >= 40) onLight = true;
+    });
+    hdr.classList.toggle('on-light', onLight);
+    hdr.classList.toggle('on-dark', !onLight);
+  }
+  addEventListener('scroll', updateHeader);
+  updateHeader();
 
   const hbtn = document.getElementById('hbtn');
   const mnav = document.querySelector('header nav');
@@ -234,9 +247,12 @@
   (function(){
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('modalVideo');
-    document.getElementById('playVideo').onclick = () => { modal.classList.add('on'); video.play().catch(()=>{}); };
-    document.getElementById('closeVideo').onclick = () => { modal.classList.remove('on'); video.pause(); };
-    modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.remove('on'); video.pause(); } });
+    function openModal(){ modal.classList.add('on'); document.body.style.overflow = 'hidden'; video.play().catch(()=>{}); }
+    function closeModal(){ modal.classList.remove('on'); document.body.style.overflow = ''; video.pause(); }
+    document.getElementById('playVideo').onclick = openModal;
+    document.getElementById('closeVideo').onclick = closeModal;
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('on')) closeModal(); });
   })();
 
   // Join band: honeypot + "confirm you're human" pick, then hands off to WhatsApp

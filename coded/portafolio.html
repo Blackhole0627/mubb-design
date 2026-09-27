@@ -6,7 +6,7 @@
 </head><body>
 
 <header id="hdr">
-  <div class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></div>
+  <a href="index.html" class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></a>
   <nav>
     <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html" class="on">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
   </nav>
@@ -70,7 +70,19 @@
 
 <script>
   const hdr = document.getElementById('hdr');
-  addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
+  const lightSections = document.querySelectorAll('[data-theme="light"]');
+  function updateHeader(){
+    if (scrollY <= 60) { hdr.classList.remove('on-dark','on-light'); return; }
+    let onLight = false;
+    lightSections.forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      if (r.top <= 40 && r.bottom >= 40) onLight = true;
+    });
+    hdr.classList.toggle('on-light', onLight);
+    hdr.classList.toggle('on-dark', !onLight);
+  }
+  addEventListener('scroll', updateHeader);
+  updateHeader();
 
   const hbtn = document.getElementById('hbtn');
   const mnav = document.querySelector('header nav');
