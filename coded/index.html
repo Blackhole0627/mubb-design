@@ -10,7 +10,7 @@
 </head><body>
 
 <header id="hdr">
-  <a href="index.html" class="logo">MUBB <b>DESIGN</b><span>STUDIO</span></a>
+  <a href="index.html" class="logo"><span class="mark">M</span><span class="txt">MUBB <b>DESIGN</b><span class="sub">STUDIO</span></span></a>
   <nav>
     <a href="index.html" class="on">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
   </nav>
@@ -218,8 +218,30 @@
   const hbtn = document.getElementById('hbtn');
   const mnav = document.querySelector('header nav');
   if (hbtn && mnav) {
-    hbtn.onclick = () => { mnav.classList.toggle('open'); hbtn.textContent = mnav.classList.contains('open') ? '✕' : '☰'; };
-    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mnav.classList.remove('open'); hbtn.textContent = '☰'; }));
+    let scrollLockY = 0;
+    function setLock(on){
+      if (on) {
+        scrollLockY = window.scrollY;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = (-scrollLockY) + 'px';
+        document.body.style.width = '100%';
+      } else {
+        document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollLockY);
+      }
+    }
+    function closeMnav(){ mnav.classList.remove('open'); hbtn.textContent = '☰'; setLock(false); }
+    hbtn.onclick = () => {
+      const willOpen = !mnav.classList.contains('open');
+      mnav.classList.toggle('open', willOpen);
+      hbtn.textContent = willOpen ? '✕' : '☰';
+      setLock(willOpen);
+    };
+    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMnav));
   }
 
 
@@ -247,8 +269,25 @@
   (function(){
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('modalVideo');
-    function openModal(){ modal.classList.add('on'); document.body.style.overflow = 'hidden'; video.play().catch(()=>{}); }
-    function closeModal(){ modal.classList.remove('on'); document.body.style.overflow = ''; video.pause(); }
+    let modalScrollY = 0;
+    function openModal(){
+      modal.classList.add('on');
+      modalScrollY = window.scrollY;
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = (-modalScrollY) + 'px';
+      document.body.style.width = '100%';
+      video.play().catch(()=>{});
+    }
+    function closeModal(){
+      modal.classList.remove('on');
+      document.documentElement.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, modalScrollY);
+      video.pause();
+    }
     document.getElementById('playVideo').onclick = openModal;
     document.getElementById('closeVideo').onclick = closeModal;
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
