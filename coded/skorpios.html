@@ -10,6 +10,7 @@
   <nav>
     <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html" class="on">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
   </nav>
+  <button class="hbtn" id="hbtn" aria-label="Menú">☰</button>
 </header>
 
 <section class="video" style="height:80vh">
@@ -75,6 +76,14 @@
 <script>
   const hdr = document.getElementById('hdr');
   addEventListener('scroll', () => hdr.classList.toggle('stuck', scrollY > 60));
+
+  const hbtn = document.getElementById('hbtn');
+  const mnav = document.querySelector('header nav');
+  if (hbtn && mnav) {
+    hbtn.onclick = () => { mnav.classList.toggle('open'); hbtn.textContent = mnav.classList.contains('open') ? '✕' : '☰'; };
+    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mnav.classList.remove('open'); hbtn.textContent = '☰'; }));
+  }
+
   (function(){
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('modalVideo');

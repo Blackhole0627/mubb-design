@@ -16,6 +16,7 @@
   <nav>
     <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html">Portafolio</a><a href="prensa.html">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
   </nav>
+  <button class="hbtn" id="hbtn" aria-label="Menú">☰</button>
 </header>
 
 <article class="legal">
@@ -90,5 +91,13 @@
   </div>
   <a class="f-top" href="#hdr" aria-label="Subir">↑</a>
 </footer>
-<script>document.getElementById('hdr').classList.add('stuck');</script>
+<script>document.getElementById('hdr').classList.add('stuck');
+
+  const hbtn = document.getElementById('hbtn');
+  const mnav = document.querySelector('header nav');
+  if (hbtn && mnav) {
+    hbtn.onclick = () => { mnav.classList.toggle('open'); hbtn.textContent = mnav.classList.contains('open') ? '✕' : '☰'; };
+    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mnav.classList.remove('open'); hbtn.textContent = '☰'; }));
+  }
+</script>
 </body></html>
