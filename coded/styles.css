@@ -12,7 +12,7 @@ a{color:inherit;text-decoration:none}
    from there on it tracks whichever section is behind it — bright/white
    over dark sections (almost the whole site), dark/black over light
    sections (e.g. the stats band) — via the data-theme attribute + JS below. */
-header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid rgba(255,255,255,.18);transition:background .4s var(--ease),padding .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);background:transparent;color:#fff}
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid rgba(255,255,255,.18);transition:background .4s var(--ease),padding .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);background:transparent;color:#fff;transform:translateZ(0);will-change:transform;backface-visibility:hidden}
 header.on-dark{background:#fff;color:#111;padding:16px 48px;border-bottom-color:rgba(0,0,0,.08);box-shadow:0 1px 18px rgba(0,0,0,.08)}
 header.on-light{background:#000;color:#fff;padding:16px 48px;border-bottom-color:rgba(255,255,255,.15);box-shadow:0 1px 18px rgba(0,0,0,.2)}
 .logo{font-size:16px;letter-spacing:.08em;text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:12px}
