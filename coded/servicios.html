@@ -78,7 +78,9 @@
 <script>
   const hdr = document.getElementById('hdr');
   const lightSections = document.querySelectorAll('[data-theme="light"]');
+  let headerTicking = false;
   function updateHeader(){
+    headerTicking = false;
     if (scrollY <= 60) { hdr.classList.remove('on-dark','on-light'); return; }
     let onLight = false;
     lightSections.forEach(sec => {
@@ -88,7 +90,9 @@
     hdr.classList.toggle('on-light', onLight);
     hdr.classList.toggle('on-dark', !onLight);
   }
-  addEventListener('scroll', updateHeader);
+  addEventListener('scroll', () => {
+    if (!headerTicking) { headerTicking = true; requestAnimationFrame(updateHeader); }
+  }, { passive: true });
   updateHeader();
 
   const hbtn = document.getElementById('hbtn');
