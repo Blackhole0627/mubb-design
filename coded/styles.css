@@ -16,7 +16,7 @@ header{position:sticky;top:0;margin-bottom:-79px;z-index:50;display:flex;align-i
 header.on-dark{background:#fff;color:#111;padding:16px 48px;border-bottom-color:rgba(0,0,0,.08);box-shadow:0 1px 18px rgba(0,0,0,.08)}
 header.on-light{background:#000;color:#fff;padding:16px 48px;border-bottom-color:rgba(255,255,255,.15);box-shadow:0 1px 18px rgba(0,0,0,.2)}
 .logo{font-size:16px;letter-spacing:.08em;text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:12px}
-.logo .mark{width:34px;height:34px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold);color:var(--gold);font-size:14px;font-weight:600;letter-spacing:0}
+.logo .mark{height:34px;width:auto;flex-shrink:0;display:block}
 .logo b{font-weight:600}
 .logo .sub{font-size:9px;letter-spacing:.3em;display:block;color:#bbb;margin-top:2px}
 header.on-dark .logo .sub{color:#888}
