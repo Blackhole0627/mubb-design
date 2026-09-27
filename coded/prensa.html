@@ -6,7 +6,7 @@
 </head><body>
 
 <header id="hdr">
-  <a href="index.html" class="logo"><img class="mark" src="img/logo-mark.png" alt="MUBB Design"><span class="txt">MUBB <b>DESIGN</b><span class="sub">STUDIO</span></span></a>
+  <a href="index.html" class="logo"><img class="full" id="logoImg" src="img/logo-full-light.png" alt="MUBB Design Studio"></a>
   <nav>
     <a href="index.html">Home</a><a href="studio.html">Studio</a><a href="servicios.html">Servicios</a><a href="portafolio.html">Portafolio</a><a href="prensa.html" class="on">Prensa</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
   </nav>
@@ -76,22 +76,31 @@
 <script>
   const hdr = document.getElementById('hdr');
   const lightSections = document.querySelectorAll('[data-theme="light"]');
-  let headerTicking = false;
-  function updateHeader(){
-    headerTicking = false;
-    if (scrollY <= 60) { hdr.classList.remove('on-dark','on-light'); return; }
-    let onLight = false;
-    lightSections.forEach(sec => {
-      const r = sec.getBoundingClientRect();
-      if (r.top <= 40 && r.bottom >= 40) onLight = true;
-    });
-    hdr.classList.toggle('on-light', onLight);
-    hdr.classList.toggle('on-dark', !onLight);
+  let isLight = false;
+  const logoImg = document.getElementById('logoImg');
+  function setLogo(light){
+    if (!logoImg) return;
+    const want = light ? 'img/logo-full-light.png' : 'img/logo-full.png';
+    if (!logoImg.src.endsWith(want)) logoImg.src = want;
   }
-  addEventListener('scroll', () => {
-    if (!headerTicking) { headerTicking = true; requestAnimationFrame(updateHeader); }
-  }, { passive: true });
-  updateHeader();
+  function applyHeaderState(){
+    if (scrollY <= 60) { hdr.classList.remove('on-dark','on-light'); setLogo(true); return; }
+    hdr.classList.toggle('on-light', isLight);
+    hdr.classList.toggle('on-dark', !isLight);
+    setLogo(isLight);
+  }
+  addEventListener('scroll', applyHeaderState, { passive: true });
+  applyHeaderState();
+  if (lightSections.length) {
+    const lightObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const r = entry.boundingClientRect;
+        isLight = entry.isIntersecting && r.top <= 40 && r.bottom >= 40;
+      });
+      applyHeaderState();
+    }, { threshold: [0, 0.01, 0.25, 0.5, 0.75, 0.99, 1] });
+    lightSections.forEach(sec => lightObserver.observe(sec));
+  }
 
   const hbtn = document.getElementById('hbtn');
   const mnav = document.querySelector('header nav');

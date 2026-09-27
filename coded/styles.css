@@ -15,11 +15,8 @@ a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;margin-bottom:-79px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:1px solid rgba(255,255,255,.18);transition:background .4s var(--ease),padding .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);background:transparent;color:#fff}
 header.on-dark{background:#fff;color:#111;padding:16px 48px;border-bottom-color:rgba(0,0,0,.08);box-shadow:0 1px 18px rgba(0,0,0,.08)}
 header.on-light{background:#000;color:#fff;padding:16px 48px;border-bottom-color:rgba(255,255,255,.15);box-shadow:0 1px 18px rgba(0,0,0,.2)}
-.logo{font-size:16px;letter-spacing:.08em;text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:12px}
-.logo .mark{height:34px;width:auto;flex-shrink:0;display:block}
-.logo b{font-weight:600}
-.logo .sub{font-size:9px;letter-spacing:.3em;display:block;color:#bbb;margin-top:2px}
-header.on-dark .logo .sub{color:#888}
+.logo{display:inline-flex;align-items:center;text-decoration:none}
+.logo .full{height:50px;width:auto;display:block}
 header nav{display:flex;gap:34px}
 header nav a{color:inherit;text-decoration:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
 header nav a.on{font-weight:600;opacity:1}
@@ -30,7 +27,7 @@ header nav a:hover{opacity:1}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.8) 5%, rgba(0,0,0,.15) 45%, rgba(0,0,0,.4) 100%)}
 .hero-in{position:relative;z-index:2;padding:0 48px 44px;max-width:680px}
 .hero h1{font-weight:300;font-size:clamp(2.4rem,6vw,4.6rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;margin-bottom:18px}
-.hero .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.hero .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#f3dfb8;text-shadow:0 1px 6px rgba(0,0,0,.55);margin-bottom:16px;display:block}
 .hero p{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#ddd;margin-bottom:26px}
 .row{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;border:1px solid #fff;color:#fff;text-decoration:none;padding:14px 30px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:background .3s,color .3s}
@@ -229,7 +226,9 @@ header.on-light .hbtn{border-color:rgba(255,255,255,.6)}
   .t-arrows{margin-top:16px}
   header nav a{width:100%;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;color:#fff}
   .hbtn{display:flex}
-  .grid3,.tgrid,.stats-grid,.fgrid,.fgrid3,.pgrid{grid-template-columns:1fr 1fr}
+  .grid3,.stats-grid,.fgrid,.fgrid3,.pgrid{grid-template-columns:1fr 1fr}
+  .tgrid{grid-template-columns:1fr;justify-items:center;text-align:center;max-width:300px}
+  .tcard{width:100%}
   .qlinks{grid-template-columns:1fr 1fr}
   .ql{min-width:0}
   .ql .t,.ql .d{overflow-wrap:break-word}
